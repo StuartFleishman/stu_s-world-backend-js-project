@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end 
 
   def create 
-    comment = Coment.new
+    comment = Comment.new(comment_params)
     if comment.save 
       render json: comment.to_json(except: [:created_at, :updated_at])
     else  
