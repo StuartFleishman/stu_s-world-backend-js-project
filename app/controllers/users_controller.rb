@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 
   def index 
     users = User.all 
-    render json: users.to_json(except: [:created_at, :updated_at], include: {comments: {only: [:text] }} )
+    render json: UserSerializer.new(users)
   end 
 
   def create 
     user = User.new(user_params)
     if user.save 
-      render json: user.to_json(except: [:created_at, :updated_at], include: {comments: {only: [:text] }} )
+      render json: UserSerializer.new(user)
     else  
       render json: { error: "fail"}
     end 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   private 
 
   def user_params 
-    params.require(:user).permit(:name, :score)
+    params.require(:user).permit(:name)
   end
 
 
