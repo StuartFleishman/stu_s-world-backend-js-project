@@ -2,18 +2,23 @@ class GameScoresController < ApplicationController
   
   def index 
     scores = GameScore.all 
-    render json: scores.to_json(except: [:created_at, :updated_at] )
+    render json: GameScoreSerializer.new(scores)
   end 
 
 
   def create 
     score = GameScore.new(score_params)
     if score.save 
-      render json: score.to_json(except: [:created_at, :updated_at] )
+      render json: GameScoreSerializer.new(score)
     else  
       render json: { error: "fail"}
     end 
 
+  end 
+
+  def top_scores
+    top_scores = GameScore.top_scores.limit(5)
+    render json: GameScoreSerializer.new(top_scores)
   end 
 
   private 
