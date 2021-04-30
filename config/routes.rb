@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get '/game_scores/top_scores', to: 'game_scores#top_scores'
   
-  resources :game_scores
   resources :comments
   resources :users
 

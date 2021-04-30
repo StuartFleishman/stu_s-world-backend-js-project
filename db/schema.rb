@@ -10,19 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_140101) do
+ActiveRecord::Schema.define(version: 2021_04_30_191804) do
 
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "video_id"
-  end
-
-  create_table "game_scores", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,8 +23,6 @@ ActiveRecord::Schema.define(version: 2021_04_27_140101) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "score"
-    t.integer "game_scores"
   end
 
 end
