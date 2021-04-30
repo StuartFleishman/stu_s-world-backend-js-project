@@ -3,7 +3,7 @@ class GameScore < ApplicationRecord
 
 
   def self.top_scores
-    order(score: :asc)
+    order(score: :desc)
   end
 
 

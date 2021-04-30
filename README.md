@@ -1,24 +1,18 @@
-# README
+Stu's World 
+Trivia App using jService Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prerequisites
+Will need Ruby on Rails Installed 
 
-Things you may want to cover:
+Running 
+Open Backend, in terminal - rails s 
+Open Front, in terminal - open index.html
 
-* Ruby version
+Built With
+Ruby on Rails
+Javascript
+HTML
+CSS
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details
